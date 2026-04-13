@@ -47,45 +47,51 @@ const MAX_ACTIVE_MEMBERS = 40;
 
 const INIT_ADEPTS = [
   { id:"a1", name:"Lucas Ekström", age:22, fadderId:"u2", points:35, goal:50, activities:[
-    { id:"ap1", desc:"Deltagit på 3 fisketurer", points:15, date:"2026-03-15", reportedBy:"u2" },
-    { id:"ap2", desc:"Hjälpt till med båtunderhåll", points:10, date:"2026-03-28", reportedBy:"u2" },
-    { id:"ap3", desc:"Deltagit på städdag vid Slussen", points:10, date:"2026-04-05", reportedBy:"u1" },
+    { id:"ap1", desc:"Deltagit på 3 fisketurer vid Sollums Lång", points:15, date:"2026-03-15", reportedBy:"u2" },
+    { id:"ap2", desc:"Hjälpt till med mjärdfisket", points:10, date:"2026-03-28", reportedBy:"u2" },
+    { id:"ap3", desc:"Deltagit på städdag vid sjöarna", points:10, date:"2026-04-05", reportedBy:"u1" },
   ]},
   { id:"a2", name:"Wilma Johansson", age:19, fadderId:"u5", points:12, goal:50, activities:[
-    { id:"ap4", desc:"Deltagit på 1 fisketur", points:5, date:"2026-04-01", reportedBy:"u5" },
-    { id:"ap5", desc:"Introducerad till catch & release", points:7, date:"2026-04-10", reportedBy:"u5" },
+    { id:"ap4", desc:"Deltagit på fisketur Lilla Valeklint", points:5, date:"2026-04-01", reportedBy:"u5" },
+    { id:"ap5", desc:"Introduktion flugfiske och catch & release", points:7, date:"2026-04-10", reportedBy:"u5" },
   ]},
 ];
 
-const SPECIES = ["Abborre","Gädda","Gös","Lax","Öring","Sik","Harr","Regnbåge","Ål","Lake","Braxen","Mört","Röding","Karp","Annat"];
+const SPECIES = ["Öring","Röding","Regnbåge","Abborre","Elritsa","Mört","Sutare","Annat"];
 
 const INIT_NEWS = [
-  { id:"n1", title:"Årsmöte 15 maj", content:"Välkomna till årsmöte i klubbstugan kl 18:00. Vi går igenom ekonomi, väljer ny styrelse och diskuterar sommarprogrammet. Fika serveras. Anmäl er senast 10 maj.", author:ALL_USERS[0], date:"2026-04-12T10:00:00", pinned:true },
-  { id:"n2", title:"Nya regler för Göta älv", content:"Länsstyrelsen har uppdaterat fiskereglerna för Göta älv from 1 maj. Minimimått för gös höjs till 45 cm. Fullständiga regler finns under Dokument.", author:ALL_USERS[0], date:"2026-04-08T08:00:00", pinned:false },
-  { id:"n3", title:"Båtplatserna öppna", content:"Båtplatserna vid Slussen är nu öppna för säsongen. Boka via Erik. Kom ihåg att ta med eget ankare.", author:ALL_USERS[1], date:"2026-04-05T14:00:00", pinned:false },
+  { id:"n1", title:"Årsmöte 15 maj", content:"Välkomna till årsmöte i klubbstugan kl 18:00. Vi går igenom ekonomi, väljer ny styrelse och diskuterar sommarprogrammet. Bland annat planering av regnbågsutsättning i Sollums Lång och status på mjärdfisket. Fika serveras. Anmäl er senast 10 maj.", author:ALL_USERS[0], date:"2026-04-12T10:00:00", pinned:true },
+  { id:"n2", title:"Regnbågsutsättning genomförd", content:"Vi har nu satt ut 200 kg regnbåge i Sollums Lång. Fisken är i bra kondition och borde ge fint fiske redan nu. Tänk på att använda hullingfria krokar vid catch & release. Uppdaterade fiskeföreskrifter finns under Dokument.", author:ALL_USERS[0], date:"2026-04-08T08:00:00", pinned:false },
+  { id:"n3", title:"Mjärdfisket igång — rapport", content:"Erik och Johan har vittjat mjärdarna i Sollums Lång. Resultatet denna omgång: 14 kg abborre borttagen. Bra jobb! Vi fortsätter löpande under säsongen. Vill du hjälpa till — hör av dig till Erik.", author:ALL_USERS[0], date:"2026-04-05T14:00:00", pinned:false },
+  { id:"n4", title:"Säsongen öppnar 19 april", content:"Säsongsöppning vid Sollums Lång lördag 19 april kl 06:00. Vi samlas vid parkeringen. Ta med flugspö och vadarstövlar. Fika ordnas gemensamt. Ser fram emot att se er alla vid sjön!", author:ALL_USERS[0], date:"2026-04-01T09:00:00", pinned:false },
 ];
 
 const INIT_POSTS = [
-  { id:"bp1", author:ALL_USERS[1], content:"Någon som vill hänga med ut på lördag morgon? Tänkte testa vid Stallbackabron runt 06:00. Har plats i båten!", date:"2026-04-12T16:30:00", comments:[
-    { id:"bc1", author:ALL_USERS[2], text:"Jag hänger på! Tar med fika.", date:"2026-04-12T17:00:00" },
-    { id:"bc2", author:ALL_USERS[0], text:"Lycka till! Rapportera vad ni får 🐟", date:"2026-04-12T17:15:00" },
+  { id:"bp1", author:ALL_USERS[1], content:"Var uppe vid Sollums Lång igår kväll. Öringen steg fint i norra viken runt 20:00. Körde en liten CDC-torrfluga i strl 16 och fick tre fina på kort stund. Bästa var runt 45 cm — släppte alla tre. Säsongen är igång!", date:"2026-04-12T16:30:00", comments:[
+    { id:"bc1", author:ALL_USERS[2], text:"Så fint! Jag tänkte prova på lördag, funkar CDC även vid bryggorna?", date:"2026-04-12T17:00:00" },
+    { id:"bc2", author:ALL_USERS[0], text:"Snyggt Erik! Bra att du släppte dem. Noterade du vattentempen?", date:"2026-04-12T17:15:00" },
+    { id:"bc3", author:ALL_USERS[1], text:"Runt 8 grader. Maria — absolut, prova vid bryggan! Stå lugnt och vänta på stigen.", date:"2026-04-12T17:30:00" },
   ]},
-  { id:"bp2", author:ALL_USERS[4], content:"Köpte en ny Shimano Stradic rulle. Första intrycket är fantastiskt — supersmooth och bra kast. Rekommenderas!", date:"2026-04-10T20:00:00", comments:[
-    { id:"bc3", author:ALL_USERS[1], text:"Vilken modell? 2500 eller 4000?", date:"2026-04-10T20:30:00" },
+  { id:"bp2", author:ALL_USERS[4], content:"Någon som provat Lilla Valeklint på sistone? Läste att öringen brukar vara på hugget tidigt på säsongen där. Tänkte ta en morgontur med flugspöt i helgen. Tips på flugor?", date:"2026-04-10T20:00:00", comments:[
+    { id:"bc4", author:ALL_USERS[0], text:"Kör en Woolly Bugger i olivgrönt eller svart, strl 10. Strippa långsamt. Tidigt på morgonen är bäst!", date:"2026-04-10T20:30:00" },
+    { id:"bc5", author:ALL_USERS[1], text:"Lilla Valeklint är underbar just nu. Prova även en liten Hares Ear-nymf. Glöm inte att det finns en båt där du kan använda.", date:"2026-04-10T21:00:00" },
   ]},
-  { id:"bp3", author:ALL_USERS[2], content:"Tips på bra nybörjarset för flugfiske? Budget runt 2000 kr.", date:"2026-04-09T11:00:00", comments:[
-    { id:"bc4", author:ALL_USERS[0], text:"Guideline Kaitum är kanon för nybörjare. Komplett set runt 1800 kr.", date:"2026-04-09T12:00:00" },
-    { id:"bc5", author:ALL_USERS[4], text:"Håller med Anna! Alternativt Vision Outfit, lite dyrare men värt det.", date:"2026-04-09T13:30:00" },
+  { id:"bp3", author:ALL_USERS[2], content:"Jag är ganska ny på flugfiske och undrar om det finns någon som kan tänka sig att ta med mig ut en tur? Vill lära mig grunderna i kastning och flugval. Har eget spö (Guideline Kaitum) men saknar erfarenhet.", date:"2026-04-09T11:00:00", comments:[
+    { id:"bc6", author:ALL_USERS[0], text:"Absolut Maria! Jag kör en nybörjarkurs vid Sollums Lång 7 juni, men vi kan gärna ta en tur innan dess. Sollums Lång har fina platser att öva kastning på.", date:"2026-04-09T12:00:00" },
+    { id:"bc7", author:ALL_USERS[4], text:"Jag hänger gärna på också. Var själv nybörjare för bara två år sedan — det går fort att lära sig grunderna!", date:"2026-04-09T13:30:00" },
+  ]},
+  { id:"bp4", author:ALL_USERS[3], content:"Hjälpte till med att vittja risvasarna i Sollums Lång idag. En hel del abborrrom samlades upp. Jobbet fortsätter — vi behöver verkligen minska abborrbeståndet för öringens och rödingens skull.", date:"2026-04-07T18:00:00", comments:[
+    { id:"bc8", author:ALL_USERS[0], text:"Tack Johan! Viktigt arbete. Ju mer abborre vi tar bort desto bättre för laxfiskarna.", date:"2026-04-07T18:30:00" },
   ]},
 ];
 
 const INIT_CATCHES = [
-  { id:"c1", angler:ALL_USERS[1], species:"Sik", weight:4200, length:58, released:false, caught_at:"2026-04-10T06:30:00", water_temp:8.5, location:"Stallbackabron", notes:"Kopparspinner, grunt vatten" },
-  { id:"c2", angler:ALL_USERS[0], species:"Gädda", weight:6800, length:87, released:true, caught_at:"2026-04-08T14:15:00", water_temp:9.0, location:"Göta älv, Slussen", notes:"Wobbler. Släppte tillbaka — fin stridsfisk!" },
-  { id:"c3", angler:ALL_USERS[2], species:"Abborre", weight:950, length:34, released:false, caught_at:"2026-04-06T08:00:00", water_temp:7.2, location:"Olidestrand", notes:"" },
-  { id:"c4", angler:ALL_USERS[1], species:"Öring", weight:2100, length:48, released:true, caught_at:"2026-04-03T17:45:00", water_temp:6.8, location:"Åkerström", notes:"Flugfiske, olive woolly bugger" },
-  { id:"c5", angler:ALL_USERS[4], species:"Gös", weight:3400, length:52, released:false, caught_at:"2026-03-28T19:00:00", water_temp:5.5, location:"Göta älv, djuphålan", notes:"Jigg, 12g" },
-  { id:"c6", angler:ALL_USERS[0], species:"Abborre", weight:1200, length:38, released:false, caught_at:"2026-03-25T07:00:00", water_temp:5.0, location:"Stallbackabron", notes:"Dropshot" },
+  { id:"c1", angler:ALL_USERS[1], species:"Öring", weight:1850, length:45, released:true, caught_at:"2026-04-12T20:15:00", water_temp:8.0, location:"Sollums Lång", notes:"CDC torrfluga strl 16, norra viken. Steg fint i ytan." },
+  { id:"c2", angler:ALL_USERS[1], species:"Öring", weight:1200, length:39, released:true, caught_at:"2026-04-12T20:30:00", water_temp:8.0, location:"Sollums Lång", notes:"Samma kväll, CDC torrfluga." },
+  { id:"c3", angler:ALL_USERS[0], species:"Regnbåge", weight:2800, length:50, released:false, caught_at:"2026-04-10T07:00:00", water_temp:7.5, location:"Sollums Lång", notes:"Woolly Bugger olive, strippat långsamt vid östra stranden." },
+  { id:"c4", angler:ALL_USERS[4], species:"Öring", weight:1600, length:42, released:true, caught_at:"2026-04-08T06:30:00", water_temp:7.0, location:"Lilla Valeklint", notes:"Hares Ear nymf strl 12, i utloppet mot Stora Valeklint." },
+  { id:"c5", angler:ALL_USERS[0], species:"Regnbåge", weight:3400, length:55, released:false, caught_at:"2026-04-05T17:00:00", water_temp:6.5, location:"Sollums Lång", notes:"Zonker vit/silver, djupare vatten vid södra udden." },
+  { id:"c6", angler:ALL_USERS[1], species:"Röding", weight:1100, length:36, released:true, caught_at:"2026-03-28T08:00:00", water_temp:5.0, location:"Sollums Lång", notes:"Liten Black Gnat torrfluga. Fin överraskning!" },
 ];
 
 // Historiska rapporter (arkiv)
@@ -137,11 +143,12 @@ const CATCH_ARCHIVE = {
 };
 
 const INIT_EVENTS = [
-  { id:"e1", title:"Säsongsöppning", date:"2026-04-19", time:"06:00", location:"Slussområdet", desc:"Årets första gemensamma fisketur. Ta med utrustning och fika.", author:ALL_USERS[0], attendees:["u1","u2","u3","u5"] },
-  { id:"e2", title:"Årsmöte", date:"2026-05-15", time:"18:00", location:"Klubbstugan", desc:"Genomgång av ekonomi, val av styrelse, sommarprogrammet.", author:ALL_USERS[0], attendees:["u1","u2","u4"] },
-  { id:"e3", title:"Nattfiske — gös", date:"2026-05-24", time:"20:00", location:"Göta älv, djuphålan", desc:"Vi testar nattfiske efter gös. Begränsat till 8 platser. Båt ingår.", author:ALL_USERS[1], attendees:["u1","u2"] },
-  { id:"e4", title:"Flugfiskekurs nybörjare", date:"2026-06-07", time:"09:00", location:"Åkerström", desc:"Anna håller i en grundkurs i flugfiske. Utrustning finns att låna.", author:ALL_USERS[0], attendees:["u3","u5"] },
-  { id:"e5", title:"Midsommarfiske", date:"2026-06-20", time:"05:00", location:"Stallbackabron", desc:"Traditionsenligt midsommarfiske. Tävling om största fisken — pris till vinnaren!", author:ALL_USERS[0], attendees:["u1","u2","u3","u4","u5"] },
+  { id:"e1", title:"Säsongsöppning", date:"2026-04-19", time:"06:00", location:"Sollums Lång", desc:"Årets första gemensamma fisketur! Vi samlas vid parkeringen. Ta med flugspö och vadarstövlar. Fika ordnas gemensamt.", author:ALL_USERS[0], attendees:["u1","u2","u3","u5"] },
+  { id:"e2", title:"Årsmöte", date:"2026-05-15", time:"18:00", location:"Klubbstugan", desc:"Genomgång av ekonomi, val av styrelse, sommarprogrammet. Diskussion om regnbågsutsättning och mjärdfiskets resultat.", author:ALL_USERS[0], attendees:["u1","u2","u4"] },
+  { id:"e3", title:"Kvällsfiske Lilla Valeklint", date:"2026-05-24", time:"18:00", location:"Lilla Valeklint", desc:"Gemensam kvällstur till pärlan Lilla Valeklint. Öringen brukar vara aktiv i ytan runt solnedgången. Ta med torrflugor! Båten finns på plats.", author:ALL_USERS[1], attendees:["u1","u2","u5"] },
+  { id:"e4", title:"Flugfiskekurs nybörjare", date:"2026-06-07", time:"09:00", location:"Sollums Lång", desc:"Anna håller i en grundkurs i flugfiske. Vi går igenom kastning, flugval, och grundläggande entomologi. Utrustning finns att låna. Perfekt för nya medlemmar och adepter!", author:ALL_USERS[0], attendees:["u3","u5"] },
+  { id:"e5", title:"Midsommarfiske", date:"2026-06-20", time:"05:00", location:"Sollums Lång", desc:"Traditionsenligt midsommarfiske vid Sollums Lång. Tävling om finaste flugan och största fångsten — pris till vinnaren! Gemensam grillning efteråt.", author:ALL_USERS[0], attendees:["u1","u2","u3","u4","u5"] },
+  { id:"e6", title:"Expedition Lille Lång", date:"2026-07-12", time:"07:00", location:"Lille Lång", desc:"Äventyrstur till Lille Lång — jakten på gammelrödingen! Vandring ca 30 min. Ta med flugspö, gråsuggor och tålamod. Begränsat till 6 deltagare.", author:ALL_USERS[1], attendees:["u1","u2"] },
 ];
 
 const DOC_CATEGORIES = [
